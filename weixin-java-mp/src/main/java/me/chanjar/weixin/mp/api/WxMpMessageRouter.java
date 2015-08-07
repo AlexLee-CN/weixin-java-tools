@@ -229,4 +229,12 @@ public class WxMpMessageRouter {
     }
 
   }
+  
+  /**
+	 * 获取Session引用
+	 * @return
+	 */
+	public WxSessionManager getSessionManager() {
+		return sessionManager;
+	}
 }
