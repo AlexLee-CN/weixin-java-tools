@@ -17,7 +17,16 @@ public final class NewsBuilder extends BaseBuilder<NewsBuilder, WxMpXmlOutNewsMe
     this.articles.add(item);
     return this;
   }
-  
+  public NewsBuilder addArticle(String title, String desc, String url,
+			String picUrl) {
+		WxMpXmlOutNewsMessage.Item item = new WxMpXmlOutNewsMessage.Item();
+		item.setDescription(desc);
+		item.setPicUrl(picUrl);
+		item.setTitle(title);
+		item.setUrl(url);
+		this.articles.add(item);
+		return this;
+	}
   public WxMpXmlOutNewsMessage build() {
     WxMpXmlOutNewsMessage m = new WxMpXmlOutNewsMessage();
     for(WxMpXmlOutNewsMessage.Item item : articles) {
